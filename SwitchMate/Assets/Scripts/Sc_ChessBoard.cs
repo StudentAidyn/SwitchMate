@@ -11,9 +11,10 @@ using UnityEngine.UI;
 // 4. Rook
 // 5. Pawn
 
+// SINGLETON
 public class Sc_ChessBoard : MonoBehaviour
 {
-    public int m_CBSize = 8;
+    static public int m_CBSize = 8;
     public float m_size = 10f;
     public GameObject m_TilePrefab = null;
     public GameObject m_CPPrefab = null;    // ChessPiece Prefab
@@ -21,9 +22,10 @@ public class Sc_ChessBoard : MonoBehaviour
     public GameObject m_CPLayer = null;
     public GameObject m_PlayerLayer = null;
     public CanvasScaler m_MainCanvas = null;
-    private Sc_Player m_player;
-
-    List<Sc_ChessTile> m_tiles = new List<Sc_ChessTile>();
+    static private Sc_Player m_player;
+    
+    static List<Sc_ChessTile> m_tiles = new List<Sc_ChessTile>();
+    static List<Sc_ChessTile> m_moves = new List<Sc_ChessTile>();
 
     // Start is called before the first frame update
     void Start()
@@ -33,8 +35,25 @@ public class Sc_ChessBoard : MonoBehaviour
         CheckMoveSet();
     }
 
+    private static Sc_ChessBoard _instance = null;
+
+    private void Awake()
+    {
+        if (_instance != null && _instance != this)
+        {
+            // There is already a singleton loaded. Destroy ourself!
+            Destroy(this.gameObject);
+            return;
+        }
+        // We were first, let this object be the singleton! :)
+        _instance = this;
+        DontDestroyOnLoad(this.gameObject);
+    }
+
+
+
     // add in editor builder??
-    void BuildChessBoard(int boardSize)
+    public void BuildChessBoard(int boardSize)
     {
         // Clear the current tiles
         if (m_tiles.Count != 0) {
@@ -66,8 +85,6 @@ public class Sc_ChessBoard : MonoBehaviour
                 Sc_ChessPiece CP = null;
                 if (i == 1 && j == 4)
                 {
-
-
                     GameObject CPObject = Instantiate(m_CPPPrefab, tile.gameObject.transform.position, Quaternion.identity, m_PlayerLayer.transform);
                     CP = CPObject.GetComponent<Sc_Player>();
                     CP.CPInit(Sc_ChessEnum.Rook, m_size, false);
@@ -92,30 +109,21 @@ public class Sc_ChessBoard : MonoBehaviour
         }
     }
 
-    void CheckMoveSet()
+    public static void CheckMoveSet()
     {
-        //List<Sc_ChessTile> moves = new List<Sc_ChessTile>();
-        //moves = m_player.getAvailableMoves(ref m_tiles, ref m_CBSize);
-        //m_player.getAvailableMoves(ref m_tiles, ref m_CBSize);
-        foreach (Sc_ChessTile tile in m_player.getAvailableMoves(ref m_tiles, ref m_CBSize))
+        // checks, resets and clears the current tiles selected
+        if(m_moves.Count != 0 ) { 
+            foreach(Sc_ChessTile tile in m_moves)
+            {
+                tile.BaseColour();
+            }
+                m_moves.Clear(); 
+        }
+        m_moves = m_player.getAvailableMoves(ref m_tiles, ref m_CBSize);
+        // hightlights all the current tiles the player can move
+        foreach (Sc_ChessTile tile in m_moves)
         {
-            Debug.Log("GETTING TILES");
             tile.Highlight();
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        if (m_player)
-        {
-            Vector2 pos = m_player.getParent().getPosition();
-            //m_tiles[pos.x, pos.y].
-        }
-
-        // put all possible tiles within a list, 
-        // get current tile position within array and then change all tiles that are available to highlighted.
-        // when player is placed reset all tiles, clear list and recalculate.
-    }
-
-
 }

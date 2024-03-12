@@ -26,8 +26,8 @@ public class Sc_ChessTile : MonoBehaviour, IDropHandler
     public void clearCP() { m_CP = null; }
     public Vector2 getPosition() { return m_position; }
 
-    public void OnDrop(PointerEventData eventData)
-    {
+    // when the player releases the player chess piece
+    public void OnDrop(PointerEventData eventData) {
         if(!m_isAvailable) { return; }
         GameObject dropped = eventData.pointerDrag;
         Sc_Player player = dropped.GetComponent<Sc_Player>();
@@ -40,6 +40,8 @@ public class Sc_ChessTile : MonoBehaviour, IDropHandler
         player.getParent().clearCP();
         player.setParentTile(this);
         m_CP = player;
+
+        Sc_ChessBoard.CheckMoveSet();
     }
 
     // Start is called before the first frame update

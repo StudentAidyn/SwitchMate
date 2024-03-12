@@ -205,7 +205,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe7973809657ba34a90afdcb94987d88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_CBSize: 8
   m_size: 50
   m_TilePrefab: {fileID: 7232009313503610922, guid: e3008a52959ed5045bea16e36574612a, type: 3}
   m_CPPrefab: {fileID: 8886044428998214141, guid: 456a9babc1f80064db510efac3c12ab6, type: 3}
