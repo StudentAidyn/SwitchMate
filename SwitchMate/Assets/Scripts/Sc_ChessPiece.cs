@@ -8,10 +8,11 @@ public class Sc_ChessPiece : MonoBehaviour {
     protected Sc_ChessEnum m_currentCP = 0;
     protected RectTransform m_RT;
     public Image m_image;
-    public Transform m_parentTile;
+    public Sc_ChessTile m_parentTile;
     bool m_isActive = true;
     
-    public void setParentTile(Transform _parent) { m_parentTile = _parent;  }
+    public Sc_ChessEnum getChessPiece() { return m_currentCP; }
+    public void setParentTile(Sc_ChessTile _parent) { m_parentTile = _parent;  }
     virtual protected void Awake()
     {
         m_RT = GetComponent<RectTransform>();
