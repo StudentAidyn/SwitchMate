@@ -175,23 +175,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprites:
-  - _black: {fileID: 806949858, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: 92196936, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: -1998481276, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: -23173777, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 0
-  - _black: {fileID: -1714642076, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: 1435246362, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: -1346485706, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: -1718005345, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 1
-  - _black: {fileID: 1105775165, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: -914311822, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: -113252146, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: -1254260211, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 2
-  - _black: {fileID: 1277414219, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: 1377130491, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: 863489826, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: 369966499, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 3
-  - _black: {fileID: 2050703813, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: 383824857, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: 1396429615, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: 895479657, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 4
-  - _black: {fileID: -1369102443, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
-    _white: {fileID: 293818669, guid: c1f7456ac91a78449a9556e9f57904c4, type: 3}
+  - _black: {fileID: -370896081, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
+    _white: {fileID: -1138255320, guid: c32d83a7bf1686a42ae3a5e6424fbee8, type: 3}
     _pieceID: 5
 --- !u!114 &179423917
 MonoBehaviour:

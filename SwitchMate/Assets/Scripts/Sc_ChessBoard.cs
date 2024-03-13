@@ -80,7 +80,7 @@ public class Sc_ChessBoard : MonoBehaviour
                 Sc_ChessTile tile = tileObject.GetComponent<Sc_ChessTile>();
                 if(!tileObject.GetComponent<Sc_ChessTile>()) { Debug.Log("FAILED TO GRAB CHESS TILE"); }
                 int even = (i + j) % 2;
-                Color color = (even == 1) ? Color.black : Color.white;
+                Color color = (even == 1) ? Color.green : Color.magenta;
 
                 Sc_ChessPiece CP = null;
                 if (i == 1 && j == 4)
@@ -90,7 +90,7 @@ public class Sc_ChessBoard : MonoBehaviour
                     CP.CPInit(Sc_ChessEnum.Rook, m_size, false);
                     m_player = CP.gameObject.GetComponent<Sc_Player>();
                 }
-                else if (i == 0)
+                else
                 {
                     GameObject CPObject = Instantiate(m_CPPrefab, tile.gameObject.transform.position, Quaternion.identity, m_CPLayer.transform);
                     CP = CPObject.GetComponent<Sc_ChessPiece>();
