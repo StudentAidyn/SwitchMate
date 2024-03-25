@@ -23,6 +23,9 @@ public class Sc_ChessBoard : MonoBehaviour
     public GameObject m_PlayerLayer = null;
     public CanvasScaler m_MainCanvas = null;
     static private Sc_Player m_player;
+
+    public Color m_tileTypeAlpha = Color.white;
+    public Color m_tileTypeBeta = Color.black;
     
     static List<Sc_ChessTile> m_tiles = new List<Sc_ChessTile>();
     static List<Sc_ChessTile> m_moves = new List<Sc_ChessTile>();
@@ -71,7 +74,7 @@ public class Sc_ChessBoard : MonoBehaviour
 
         float adjustmentRatio = Screen.width / m_MainCanvas.referenceResolution.x;
         m_CBSize = boardSize;
-        float offset = (m_CBSize * m_size) * (adjustmentRatio) * 0.5f;
+        float offset = (m_CBSize * m_size) * (adjustmentRatio) * 0.5f - (m_size * 0.5f);
         for (int i = 0; i < m_CBSize; i++)
         {
             for (int j = 0; j < m_CBSize; j++)
@@ -80,7 +83,7 @@ public class Sc_ChessBoard : MonoBehaviour
                 Sc_ChessTile tile = tileObject.GetComponent<Sc_ChessTile>();
                 if(!tileObject.GetComponent<Sc_ChessTile>()) { Debug.Log("FAILED TO GRAB CHESS TILE"); }
                 int even = (i + j) % 2;
-                Color color = (even == 1) ? Color.green : Color.magenta;
+                Color color = (even == 1) ? m_tileTypeAlpha : m_tileTypeBeta;
 
                 Sc_ChessPiece CP = null;
                 if (i == 1 && j == 4)

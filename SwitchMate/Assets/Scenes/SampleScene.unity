@@ -212,6 +212,8 @@ MonoBehaviour:
   m_CPLayer: {fileID: 1907807422}
   m_PlayerLayer: {fileID: 1352767169}
   m_MainCanvas: {fileID: 549238534}
+  m_tileTypeAlpha: {r: 0.9528302, g: 0.9102479, b: 0.84046817, a: 1}
+  m_tileTypeBeta: {r: 0.20554467, g: 0.22507997, b: 0.2924528, a: 1}
 --- !u!222 &179423919
 CanvasRenderer:
   m_ObjectHideFlags: 0

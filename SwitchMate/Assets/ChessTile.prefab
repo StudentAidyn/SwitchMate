@@ -90,3 +90,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_image: {fileID: 0}
+  m_position: {x: 0, y: 0}
+  m_highlightColour: {r: 0.5577535, g: 0.7830189, b: 0.48384658, a: 1}

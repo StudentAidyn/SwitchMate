@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.Tilemaps;
-using static UnityEditor.PlayerSettings;
+
 
 public class Sc_Player : Sc_ChessPiece, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
